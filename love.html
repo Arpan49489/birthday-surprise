@@ -1,0 +1,382 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For You</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 50% 35%, #35213d 0%, #160d1d 42%, #050307 100%);
+    font-family: Georgia, serif;
+    color: white;
+}
+
+/* Moon */
+
+.moon {
+    position: absolute;
+    top: 70px;
+    right: 120px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #fff1cf;
+    box-shadow: 0 0 45px rgba(255,235,190,.35);
+}
+
+/* Stars */
+
+.star {
+    position: absolute;
+    color: #fff;
+    opacity: .65;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+.s1 { top: 15%; left: 15%; }
+.s2 { top: 25%; left: 28%; animation-delay: 1s; }
+.s3 { top: 12%; left: 55%; animation-delay: 2s; }
+.s4 { top: 30%; right: 25%; animation-delay: .5s; }
+.s5 { top: 18%; right: 40%; animation-delay: 1.5s; }
+
+@keyframes twinkle {
+    0%,100% { opacity: .25; }
+    50% { opacity: 1; }
+}
+
+/* Text */
+
+.content {
+    position: absolute;
+    top: 23%;
+    width: 100%;
+    text-align: center;
+    z-index: 5;
+}
+
+.title {
+    font-size: 43px;
+    letter-spacing: 6px;
+    text-shadow: 0 0 25px rgba(255,160,200,.4);
+}
+
+.subtitle {
+    margin-top: 25px;
+    color: #d9b8c8;
+    font-size: 17px;
+    font-style: italic;
+}
+
+.love {
+    margin-top: 38px;
+    font-size: 25px;
+    line-height: 1.8;
+    color: #f3c7d9;
+    text-shadow: 0 0 15px rgba(255,120,170,.15);
+}
+
+.small {
+    margin-top: 25px;
+    color: #b99aaa;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Small Hearts */
+
+.heart {
+    position: absolute;
+    color: #ff709d;
+    font-size: 14px;
+    text-shadow: 0 0 12px #ff477e;
+    animation: rise 6s infinite ease-in;
+    opacity: 0;
+}
+
+.h1 { left: 18%; top: 70%; animation-delay: 0s; }
+.h2 { left: 30%; top: 80%; animation-delay: 1.4s; }
+.h3 { left: 45%; top: 75%; animation-delay: 2.5s; }
+.h4 { left: 62%; top: 80%; animation-delay: .8s; }
+.h5 { left: 76%; top: 72%; animation-delay: 3s; }
+.h6 { left: 86%; top: 82%; animation-delay: 4s; }
+
+@keyframes rise {
+
+    0% {
+        transform: translateY(0) scale(.7);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: .7;
+    }
+
+    70% {
+        opacity: .7;
+    }
+
+    100% {
+        transform: translateY(-260px) scale(1);
+        opacity: 0;
+    }
+}
+
+/* Garden */
+
+.garden {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 190px;
+    background: linear-gradient(to top, #030204, transparent);
+}
+
+/* Flower */
+
+.flower {
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(to top, #274c32, #4d8958);
+    border-radius: 5px;
+    transform-origin: bottom;
+}
+
+.flower:before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 14px;
+    background: #39734a;
+    border-radius: 100% 0;
+    left: -25px;
+    top: 65%;
+    transform: rotate(-25deg);
+}
+
+.flower:after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 14px;
+    background: #39734a;
+    border-radius: 0 100%;
+    right: -25px;
+    top: 45%;
+    transform: rotate(25deg);
+}
+
+/* Flower heads */
+
+.flowerHead {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    left: 50%;
+    top: -55px;
+    transform: translateX(-50%);
+}
+
+/* Petals */
+
+.flowerHead span {
+    position: absolute;
+    width: 34px;
+    height: 45px;
+    border-radius: 50%;
+    background: #e88caf;
+    left: 18px;
+    top: 10px;
+    box-shadow: 0 0 15px rgba(235,120,170,.25);
+}
+
+.flowerHead span:nth-child(1) {
+    transform: rotate(0deg) translateY(-15px);
+}
+
+.flowerHead span:nth-child(2) {
+    transform: rotate(72deg) translateY(-15px);
+}
+
+.flowerHead span:nth-child(3) {
+    transform: rotate(144deg) translateY(-15px);
+}
+
+.flowerHead span:nth-child(4) {
+    transform: rotate(216deg) translateY(-15px);
+}
+
+.flowerHead span:nth-child(5) {
+    transform: rotate(288deg) translateY(-15px);
+}
+
+/* Center */
+
+.center {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffd76d;
+    left: 25px;
+    top: 25px;
+    box-shadow: 0 0 12px rgba(255,210,100,.4);
+}
+
+/* Different flowers */
+
+.f1 {
+    left: 14%;
+    height: 150px;
+    transform: rotate(-5deg);
+}
+
+.f2 {
+    left: 34%;
+    height: 185px;
+}
+
+.f3 {
+    left: 57%;
+    height: 165px;
+    transform: rotate(4deg);
+}
+
+.f4 {
+    left: 80%;
+    height: 140px;
+    transform: rotate(6deg);
+}
+
+/* Bottom */
+
+.bottom {
+    position: absolute;
+    bottom: 22px;
+    width: 100%;
+    text-align: center;
+    color: #a98596;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+
+<!-- Stars -->
+
+<div class="star s1">✦</div>
+<div class="star s2">✧</div>
+<div class="star s3">✦</div>
+<div class="star s4">✧</div>
+<div class="star s5">✦</div>
+
+<!-- Message -->
+
+<div class="content">
+
+    <div class="title">
+        For You
+    </div>
+
+    <div class="subtitle">
+        I do not need the whole world.
+    </div>
+
+    <div class="love">
+        One person is enough,<br>
+        then why would I need the whole world?
+    </div>
+
+    <div class="small">
+        If I have someone who understands me,<br>
+        stays beside me and makes ordinary moments feel special,<br>
+        what more could I really ask for?
+        <br><br>
+        For me, that person is you. ♡
+    </div>
+
+</div>
+
+<!-- Floating hearts -->
+
+<div class="heart h1">♡</div>
+<div class="heart h2">♥</div>
+<div class="heart h3">♡</div>
+<div class="heart h4">♥</div>
+<div class="heart h5">♡</div>
+<div class="heart h6">♥</div>
+
+<!-- Flowers -->
+
+<div class="garden">
+
+    <div class="flower f1">
+        <div class="flowerHead">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="center"></div>
+        </div>
+    </div>
+
+    <div class="flower f2">
+        <div class="flowerHead">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="center"></div>
+        </div>
+    </div>
+
+    <div class="flower f3">
+        <div class="flowerHead">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="center"></div>
+        </div>
+    </div>
+
+    <div class="flower f4">
+        <div class="flowerHead">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="center"></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="bottom">
+    Just you. That is enough. ♡
+</div>
+
+</body>
+</html>
+```
+

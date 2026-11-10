@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..600&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<!-- 1. LOADER -->
+<div id="loader"><p id="loaderIntro"></p><div class="bar"><i id="barFill"></i></div><span id="pct">0%</span></div>
+
+<button id="music" aria-label="Toggle music" title="Music">♪</button>
+<audio id="audio" loop preload="none"></audio>
+
+<main>
+<!-- 2. HERO -->
+<section id="hero">
+  <div class="balloons" id="balloons" aria-hidden="true"></div>
+  <p class="kicker">Today the world got a little brighter</p>
+  <h1 class="split">Happy Birthday</h1>
+  <h2 id="heroName" class="grad"></h2>
+  <button class="btn" id="startBtn">Start the Celebration</button>
+</section>
+
+<!-- 3. COUNTDOWN -->
+<section id="countdown" class="glass-wrap">
+  <h2 id="cdTitle"></h2>
+  <div id="cdGrid" class="cd-grid">
+    <div class="glass"><b id="cd-y">0</b><span>years</span></div>
+    <div class="glass"><b id="cd-d">0</b><span>days</span></div>
+    <div class="glass"><b id="cd-h">0</b><span>hours</span></div>
+    <div class="glass"><b id="cd-m">0</b><span>minutes</span></div>
+    <div class="glass"><b id="cd-s">0</b><span>seconds</span></div>
+  </div>
+  <p id="cdMsg" class="cd-msg"></p>
+</section>
+
+<!-- 4. GALLERY -->
+<section id="gallery"><h2>Moments worth framing</h2><div class="grid" id="grid"></div></section>
+
+<!-- 5. MEMORIES -->
+<section id="memories"><h2>The story so far</h2><ol class="timeline" id="timeline"></ol></section>
+
+<!-- 6. LETTER -->
+<section id="letter"><article class="paper glass"><h2 id="letterTitle"></h2><div id="letterBody"></div><p id="letterSign" class="sign"></p></article></section>
+
+<!-- 7. SURPRISE -->
+<section id="surprise">
+  <h2>One more thing</h2>
+  <button id="gift" class="gift" aria-label="Open the gift"><span class="lid"></span><span class="box"></span></button>
+  <div id="reveal" class="reveal"><h3 id="revealTitle"></h3><p id="revealText"></p><button class="btn ghost" id="replayGift">Close the box</button></div>
+</section>
+
+<!-- 8. FINALE -->
+<section id="finale"><h2 class="big" id="finaleTitle"></h2><p id="finaleMsg"></p><button class="btn" id="replayAll">Replay the celebration</button></section>
+</main>
+
+<div id="lightbox" hidden><button class="lb-x" aria-label="Close">×</button><button class="lb-p" aria-label="Previous">‹</button><img alt=""><button class="lb-n" aria-label="Next">›</button><p id="lbCap"></p></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>git
